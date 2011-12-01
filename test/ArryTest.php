@@ -93,6 +93,25 @@ EOT;
   }
 
   /**
+   * test_exists
+   */
+  public function test_exists() {
+    $values = array(
+      '1' => 'A',
+      '2' => 'B',
+      '3' => null,
+    );
+
+    $this->assertTrue(arr($values)->exists(1));
+    $this->assertTrue(arr($values)->exists(2));
+    $this->assertTrue(arr($values)->exists(3));
+
+    $this->assertFalse(arr($values)->exists(0));
+    $this->assertFalse(arr($values)->exists(4));
+    $this->assertFalse(arr($values)->exists(null));
+  }
+
+  /**
    * test_method_chain
    */
   public function test_method_chain() {

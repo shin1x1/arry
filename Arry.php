@@ -31,6 +31,16 @@ class Arry {
   }
 
   /**
+   * exists
+   *
+   * @param mixed $value
+   * @return boolean
+   */
+  public function exists($value) {
+    return array_key_exists($value, $this->_values);
+  }
+
+  /**
    * filter
    *
    * @param mixed $func
