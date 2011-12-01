@@ -6,7 +6,7 @@ arr()
   ->push(array('name' => 'Dragons', 'win' => 75, 'lose' => 59))
   ->push(array('name' => 'Giants', 'win' => 71, 'lose' => 62))
   ->push(array('name' => 'Swallows', 'win' => 70, 'lose' => 59))
-  ->push(array('name' => 'Carps', 'win' => 60, 'lose' => 76))
+  ->push(array('name' => 'Carp', 'win' => 60, 'lose' => 76))
   ->push(array('name' => 'Baystars', 'win' => 47, 'lose' => 86))
   ->map(function($v) {
     $v['percent'] = $v['win'] / ($v['win'] + $v['lose']);
