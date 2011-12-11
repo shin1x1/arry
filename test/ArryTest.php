@@ -93,6 +93,24 @@ EOT;
   }
 
   /**
+   * test_get
+   */
+  public function test_get() {
+    $values = array(
+      '1' => array('name' => 'Mike', 'email' => 'a@example.com'),
+      '2' => array('name' => 'Jun'),
+      '3' => null,
+    );
+
+    $this->assertEquals('Mike', arr($values)->get('1.name'));
+    $this->assertEquals('a@example.com', arr($values)->get('1.email'));
+    $this->assertEquals('Jun', arr($values)->get('2.name'));
+    $this->assertNull(arr($values)->get('2.email'));
+    $this->assertNull(arr($values)->get('3.email'));
+    $this->assertNull(arr(array())->get('3.email'));
+  }
+
+  /**
    * test_exists
    */
   public function test_exists() {

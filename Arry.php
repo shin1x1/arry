@@ -31,6 +31,30 @@ class Arry {
   }
 
   /**
+   * get
+   *
+   * @param string $key
+   * @return mixed
+   */
+  public function get($key) {
+    $keys = explode('.', $key);
+
+    $ret = $this->_values;
+    foreach ($keys as $k) {
+      if (!is_array($ret)) {
+        return null;
+      }
+      if (!array_key_exists($k, $ret)) {
+        return null;
+      }
+
+      $ret = $ret[$k];
+    }
+
+    return $ret;
+  }
+
+  /**
    * exists
    *
    * @param mixed $value
